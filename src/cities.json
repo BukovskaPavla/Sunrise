@@ -1,0 +1,77 @@
+{
+    "title" : "Cities and their latitude and longtitude",
+    "city" : [
+    {
+        "name":"Tirana",
+        "lat":"41.3275000",
+        "long":"19.8188896"
+    },
+    {
+        "name":"New York City",
+        "lat":"40.7142691",
+        "long":"-74.0059738"
+    },
+    {
+        "name":"Las Vegas",
+        "lat":"36.1749705",
+        "long":"-115.1372223"
+    },
+    {
+        "name":"Buenos Aires",
+        "lat":"-34.5761256",
+        "long":"-58.4088135"
+    },
+    {
+        "name":"Sydney",
+        "lat":"-33.8678500",
+        "long":"151.2073212"
+    },
+    {
+        "name":"Wien",
+        "lat":"48.2084878",
+        "long":"16.3720760"
+    },
+    {
+        "name":"Minsk",
+        "lat":"53.9000000",
+        "long":"27.5666676"
+    },
+    {
+        "name":"Brussels",
+        "lat":"50.8465975",
+        "long":"4.3527746"
+    },
+    {
+        "name":"Rio de Janeiro",
+        "lat":"-22.9027778",
+        "long":"-43.2075005"
+    },
+    {
+        "name":"London",
+        "lat":"51.5084153",
+        "long":"-0.1255327"
+    },
+    {
+        "name":"Toronto",
+        "lat":"43.7001138",
+        "long":"-79.4163055"
+    },
+    {
+        "name":"Shanghai",
+        "lat":"31.2222222",
+        "long":"121.4580536"
+    },
+    {
+        "name":"Praha",
+        "lat":"50.0878368",
+        "long":"14.4241323"
+    },
+    {
+        "name":"Paris",
+        "lat":"48.8534100",
+        "long":"2.3487999"
+    }
+]
+}
+
+
