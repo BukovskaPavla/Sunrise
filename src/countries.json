@@ -1,0 +1,77 @@
+{
+    "title" : "Coutry and their latitude and longtitude",
+    "country" : [
+    {
+        "name":"Argentina",
+        "lat":"-34",
+        "long":"-64"
+    },
+    {
+        "name":"Australia",
+        "lat":"-27",
+        "long":"133"
+    },
+    {
+        "name":"Belgium",
+        "lat":"50.8333",
+        "long":"4"
+    },
+    {
+        "name":"Canada",
+        "lat":"60",
+        "long":"-95"
+    },
+    {
+        "name":"Czech Republic",
+        "lat":"49.75",
+        "long":"15.5"
+    },
+    {
+        "name":"Austria",
+        "lat":"47.3333",
+        "long":"13.3333"
+    },
+    {
+        "name":"Finland",
+        "lat":"64",
+        "long":"26"
+    },
+    {
+        "name":"France",
+        "lat":"46",
+        "long":"2"
+    },
+    {
+        "name":"Greenland",
+        "lat":"72",
+        "long":"-40"
+    },
+    {
+        "name":"India",
+        "lat":"20",
+        "long":"77"
+    },
+    {
+        "name":"Japan",
+        "lat":"36",
+        "long":"138"
+    },
+    {
+        "name":"Malaysia",
+        "lat":"2.5",
+        "long":"112.5"
+    },
+    {
+        "name":"Mauritius",
+        "lat":"-20.2833",
+        "long":"57.55"
+    },
+    {
+        "name":"New Zeeland",
+        "lat":"-41",
+        "long":"174"
+    }
+]
+}
+
+

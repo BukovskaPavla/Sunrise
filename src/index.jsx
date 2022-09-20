@@ -1,37 +1,33 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import DatePicker from 'react-datepicker'
-
 import 'react-datepicker/dist/react-datepicker.css'
 import './style.css';
-import cities from './cities.json'
+import countries from './countries.json'
 
 const App = () => {
   const[sunrise, setSunrise] =useState()
   const[sunset, setSunset] =useState()
   const[selectedDate, setSelectedDate] = useState("")
   
-  const[year, setYear]= useState()
-  const[month, setMonth]= useState()
-  const[day, setDay]= useState()
   const[datum, setDatum] = useState("")
+  
  
   const [lat, setLat] = useState();
   const [long, setLong] = useState();
-  const [city, setCity] =useState("")
+  const [country, setCountry] =useState("")
 
-  // API documentation - https://sunrise-sunset.org/api
-  // &date=2022-09-13
-  // lat (float): Latitude in decimal degrees. Required.
-  // lng (float): Longitude in decimal degrees. Required.
+  // API documentation - https://sunrise-sunset.org/api&date=2022-09-13
+  // lat (float): Latitude in decimal degrees
+  // lng (float): Longitude in decimal degrees
   const handleSubmit = (event) => {
     event.preventDefault()
-    setDatum(year + "-" + month + "-" + day)
 
     const data = event.target.value // ziskam napr.Tirana,41.3275000,19.8188896
-    setCity(data.split(',')[0])
+    setCountry(data.split(',')[0])
     setLat(data.split(',')[1])
     setLong(data.split(',')[2])
+    
    
 
     fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&date=${datum}`)
@@ -44,50 +40,53 @@ const App = () => {
     });
 }
   
-  
-
-  const CityOptions = ({cities}) => {
+  const CountryOptions = ({country}) => {
     return(
       <>
-      <option value="">{city==="" ? "Choose City" : city}</option>
-      {cities.city.map((city) => (
+      <option value="">{country==="" ? "Choose Country" : country}</option>
+      {countries.country.map((country) => (
         <option 
-          value={[city.name, city.lat, city.long]}
-          key={city.name}
-          latitude={city.lat}
-          longtitude={city.long}>{city.name}</option>
+          value={[country.name, country.lat, country.long]}
+          key={country.name}
+          latitude={country.lat}
+          longtitude={country.long}>{country.name}</option>
       ))}
       </>
     )
   }
   
+  const Datum = (date) => {
+    
+    const den = (new Date(date).getDate()).toString().padStart(2,'0')
+    const mesic = (new Date(date).getMonth()+1).toString().padStart(2,'0')
+    const rok = new Date(date).getFullYear()
+    return (setDatum(rok + "-" + mesic + "-" + den), setSelectedDate(date) )
+  }
+  
+  
 
   return (
     <div className="container">
       
-      <form className='city-date__form' onChange={handleSubmit}>
+      <form  className="form" onChange={handleSubmit}>
         <select>
-          <CityOptions cities={cities}/>
+          <CountryOptions country={country}/>
         </select>
-                
+                       
         <DatePicker 
           selected={selectedDate}
-          onChange={(date) => {
-            setSelectedDate(date);
-            setYear(new Date(date).getFullYear());
-            setMonth((new Date(date).getMonth()+1).toString().padStart(2,'0'));
-            setDay((new Date(date).getDate()).toString().padStart(2,'0'))
-            }}
+          onChange={Datum}
           dateFormat='dd.MM.yyyy'
           value={selectedDate===""? "Choose a day" : selectedDate}
         />
+        
       </form>
       <div className="results">
         <h1>Sunrise and sunset</h1>
-        <p>{city}</p>
-        <p>{datum}</p>
-        <p>Sunrise {sunrise}</p>
-        <p>Sunset {sunset}</p>
+        <h3>{country}</h3>
+        <h3>{datum}</h3>
+        <p>Sunrise: {sunrise}</p>
+        <p>Sunset: {sunset}</p> 
       </div>
     </div>
   );
